@@ -5,7 +5,7 @@ import { HeaderContainer, NavContainer, LogoContainer } from "./Header.styles";
 import Logo from "../../common/Logo/Logo";
 import NotificationIconContainer from "./NotificationIconContainer/NotificationIconContainer";
 import ProfileImage from "../../common/ProfileImage/ProfileImage";
-import NotificationIcon from "../../common/icon/NotificationIcon/NotificationIcon";
+// import NotificationIcon from "../../common/icon/NotificationIcon/NotificationIcon";
 import ContactIcon from "../../common/icon/ContactIcon/ContactIcon";
 import Button from "../../common/button/Button";
 import BackIcon from "../../common/icon/BackIcon/BackIcon";
@@ -54,7 +54,6 @@ const Header = ({ isMainPage, isChatPage }: HeaderProps) => {
   const unreadCount = useChatUnread(userId);
 
   const toggleDropdown = () => {
-    console.log("toggleDropdown", isDropdownVisible);
     setIsDropdownVisible((prev) => !prev);
   };
 
@@ -71,9 +70,9 @@ const Header = ({ isMainPage, isChatPage }: HeaderProps) => {
   //   navigate("/chats");
   // };
 
-  const handleNotification = () => {
-    // 알림 모달 띄우기
-  };
+  // const handleNotification = () => {
+  //   // 알림 모달 띄우기
+  // };
 
   // const handleMyPage = () => {
   //   navigate("/my-info");
@@ -113,7 +112,7 @@ const Header = ({ isMainPage, isChatPage }: HeaderProps) => {
           </Link>
         </LogoContainer>
         {!isMainPage && !isChatPage && (
-          <button onClick={() => navigate(-1)}>
+          <button onClick={() => navigate(-1)} title="Go Back">
             <BackIcon />
           </button>
         )}
@@ -124,13 +123,13 @@ const Header = ({ isMainPage, isChatPage }: HeaderProps) => {
                 <ContactIcon />
               </NotificationIconContainer>
             </Link>
-            <NotificationIconContainer
+            {/* <NotificationIconContainer
               notificationCount={1}
               onClick={handleNotification}
             >
               <NotificationIcon />
-            </NotificationIconContainer>
-            <button onClick={toggleDropdown}>
+            </NotificationIconContainer> */}
+            <button onClick={toggleDropdown} title="Toggle Profile Dropdown">
               <ProfileImage src={DummyProfileImage} usageType="header" />
             </button>
           </NavContainer>

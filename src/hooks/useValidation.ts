@@ -50,7 +50,8 @@ export const useValidation = (isSignup: boolean = false) => {
     password: {
       required: true,
       minLength: 8,
-      pattern: /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+      pattern:
+        /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&~])[A-Za-z\d@$!~%*#?&~]{8,}$/,
     },
   };
 

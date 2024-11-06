@@ -8,7 +8,7 @@ interface TechIconProps {
 const TechIcon = ({ techStack }: TechIconProps) => {
   return (
     <img
-      src={`src/assets/interests/${Interests[techStack]}.svg`}
+      src={`/interests/${Interests[techStack]}.svg`}
       alt={`${Interests[techStack]} icon`}
     />
   );

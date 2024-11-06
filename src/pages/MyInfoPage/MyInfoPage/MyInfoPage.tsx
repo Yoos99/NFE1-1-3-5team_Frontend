@@ -42,6 +42,7 @@ const MyInfoPage = () => {
     const fetchUserProfileData = async () => {
       try {
         if (!loginEmail) {
+          navigate("/");
           throw new Error("로그인한 사용자 정보가 없습니다.");
         }
 
